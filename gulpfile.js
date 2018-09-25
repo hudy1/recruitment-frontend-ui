@@ -9,6 +9,7 @@ var webpackStream = require('webpack-stream');
 var webpackConfig = require('./webpack.config.js');
 var browserSync = require('browser-sync').create();
 var htmlmin = require('gulp-htmlmin');
+var plumber = require('gulp-plumber');
 
 gulp.task('webpack', () => {
 	gulp.src('./src/js/index.js')
@@ -19,6 +20,7 @@ gulp.task('webpack', () => {
 
 gulp.task('sass', function () {
 	return gulp.src('./src/sass/all.scss')
+		.pipe(plumber())
 		.pipe(concat('style.css'))
 		.pipe(sass.sync())
 		.pipe(autoprefixer({
@@ -43,6 +45,13 @@ gulp.task('minify-css', ['sass'], function () {
 		.pipe(gulp.dest('dist/css/'));
 });
 
+gulp.task('copy-assets', function() {
+	var fonts = gulp.src('src/fonts/**').pipe(gulp.dest('dist/fonts'));
+	var images = gulp.src('src/images/**').pipe(gulp.dest('dist/img'));
+
+	return [fonts, images];
+});
+
 function browserReload(done) {
 	browserSync.reload();
 	done();
@@ -60,4 +69,4 @@ gulp.task('watch', ['webpack', 'sass'], function () {
 	gulp.watch('src/js/*.js', ['jsReload'])
 	gulp.watch('src/*.html').on('change', browserSync.reload);
 });
-gulp.task('default', ['webpack', 'sass', 'minify-css', 'minify-html']);
+gulp.task('default', ['webpack', 'sass', 'minify-css', 'minify-html', 'copy-assets']);

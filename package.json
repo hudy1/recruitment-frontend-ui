@@ -30,6 +30,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
+    "gulp-plumber": "^1.2.0",
     "webpack": "^4.19.1",
     "webpack-stream": "^5.1.1"
   }
