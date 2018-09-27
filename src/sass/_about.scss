@@ -1,0 +1,17 @@
+.about {
+    
+}
+
+.about__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 170px;
+}
+
+.about__col {
+    flex: 1;
+
+    &.about__col--txt {
+        padding: 0 80px;
+    }
+}

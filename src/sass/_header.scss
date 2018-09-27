@@ -1,0 +1,44 @@
+
+.header {
+    color: $white;
+
+    &::after {
+        @include triangle-bottom;
+    }
+}
+
+.header__log {
+    margin: 0;
+}
+
+.header_content {
+    min-height: 890px;
+    padding-top: $header-padding-top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header__description { 
+    margin: auto 0;
+    transform: translate(0, -$header-padding-top);
+    max-width: 540px;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.header__text,
+.header__link,
+.header__search { 
+    opacity: $text-opacity;
+}
+
+.header__search {
+    &:hover {
+        cursor: pointer;
+    }
+}

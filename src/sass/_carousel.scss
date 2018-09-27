@@ -1,0 +1,61 @@
+.carousel {
+    padding: $section-triangle-height 0;
+    &::before {
+        @include triangle-bottom;
+    }
+    &::after {
+        @include triangle-top;
+    }
+}
+
+.slider {
+    overflow: hidden;
+}
+
+.slider__list {
+    margin-bottom: 40px;
+    white-space: nowrap;
+    transition: transform $animation-duration;
+    transform: translateX(0px);
+}
+
+.slider__slide {
+    white-space: normal;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 335px;
+    margin-left: $gutter;
+    margin-right: $gutter;
+    padding: 2 * $gutter;
+    background-color: $white; 
+    box-shadow: 0 15px 50px $shadow-color; 
+
+    &:nth-child(even) {
+        margin-bottom: 25px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.slider__indicators {
+    text-align: center;
+}
+
+.slider__indicator {
+    background-color: transparent;
+    width: 11px;
+    height: 11px;
+    border: 2px solid $white;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 50%;
+    transition: background-color $animation-duration;
+    
+
+    &.slider__indicator--active {
+        background-color: $white;
+    }
+}

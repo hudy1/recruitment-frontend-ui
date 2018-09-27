@@ -1,0 +1,73 @@
+
+$card-hover-duration: $animation-duration / 3;
+$card-x-padding: 40px;
+$card-y-padding: 35px;
+
+.pricing {
+    background-image: linear-gradient(to bottom, $white, #f4f7fe);
+    padding-bottom: $section-triangle-height;
+    
+    &::after {
+        @include triangle-bottom;
+    }
+}
+
+.prices {
+    display: flex;
+    margin-bottom: 130px;
+}
+
+.prices__box {
+    flex-grow: 1;
+
+    &:hover {
+        z-index: 1;
+        .prices__card {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.prices__price {
+    text-align: center;
+    margin: 0 (-$card-x-padding) $card-y-padding (-$card-x-padding);
+    padding-bottom: $card-y-padding;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.prices__card {
+    padding: $card-y-padding $card-x-padding;
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: 0 15px 50px $shadow-color;
+    transition: transform $card-hover-duration;
+    cursor: pointer;
+}
+
+.checkmark-list {
+    &.checkmark-list--col-3 {
+        column-count: 3;
+        column-gap: $gutter;
+    }
+}
+
+.checkmark-list__li {
+    position: relative;
+    padding-left: 35px;
+
+    & + .checkmark-list__li {
+        margin-top: 15px;
+    }
+
+    &::before {
+        content: '';
+        background: url(../img/icon-check-mark.svg) left top / 19px 19px no-repeat;
+        z-index: 0;
+        width: 21px;
+        height: 21px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
