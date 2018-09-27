@@ -27,10 +27,11 @@
     "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.1",
+    "gulp-wait": "0.0.2",
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "gulp-plumber": "^1.2.0",
     "webpack": "^4.19.1",
     "webpack-stream": "^5.1.1"
   }

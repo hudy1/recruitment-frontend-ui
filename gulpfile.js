@@ -10,6 +10,7 @@ var webpackConfig = require('./webpack.config.js');
 var browserSync = require('browser-sync').create();
 var htmlmin = require('gulp-htmlmin');
 var plumber = require('gulp-plumber');
+var wait = require('gulp-wait');
 
 gulp.task('webpack', () => {
 	gulp.src('./src/js/index.js')
@@ -20,6 +21,7 @@ gulp.task('webpack', () => {
 
 gulp.task('sass', function () {
 	return gulp.src('./src/sass/all.scss')
+		.pipe(wait(200))
 		.pipe(plumber())
 		.pipe(concat('style.css'))
 		.pipe(sass.sync())
