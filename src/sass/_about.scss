@@ -1,14 +1,11 @@
 .about__row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1000px;
     padding-left: $gutter;
     padding-right: $gutter;
     margin: 20px auto 120px;
-
-    & + .about__row {
-        margin-top: 350px;
-    } 
 
     &.about__row--center {
         align-items: center;
@@ -19,11 +16,25 @@
     }
 }
 
-.about__col {
-    flex: 1;
-    max-width: 375px;
-    position: relative;
+.about {
+    padding-top: 20px;
 }
+
+.about__col {
+    position: relative;
+
+    &.about__col--txt {
+        margin-bottom: 20px;
+    }
+    &.about__col--img {
+        margin: 0 auto;
+        max-width: 200px;
+    }
+    &.about__col--left {
+        padding-top: 100px;
+    }
+}
+
 
 .about__img {
     position: absolute;
@@ -36,21 +47,21 @@
 }
 
 .about__img--error {
-    top: 100px;
+    bottom: 130px;
 }
 
 .about__img--selectors {
-    top: 190px;
+    bottom: -60px;
 }
 
 .about__img--ranges {
-    top: -105px;
     left: -100px;
+    bottom: 110px;
 }
 
 .about__img--success {
     right: -30px;
-    bottom: -75px;
+    bottom: -55px;
 }
 
 .about__img--triangle,
@@ -78,7 +89,49 @@
     color: $accent-color2;
     font-size: 60px;
     left: 50%;
-    top: -145px;
+    bottom: 200px;
     margin-left: -30px;
     transform: rotate(-45deg)
+}
+
+@media (min-width: $screen-sm-min) {
+    .about {
+        padding-top: 0;
+    }
+    .about__row {
+        & + .about__row {
+            margin-top: 350px;
+        }
+    }
+    .about__col {
+        flex: 1;
+        &.about__col--left {
+            padding-top: 0;
+            order: 1;
+        }
+        &.about__col--right {
+            order: 2;
+        }
+        &.about__col--img,
+        &.about__col--txt {
+            max-width: 375px;
+            margin: 0;
+        }
+    }
+    .about__img--error {
+        bottom: 180px;
+    }
+    .about__img--selectors {
+        bottom: -45px;
+    }
+    .about__img--ranges {
+        bottom: 220px;
+    }
+    .about__img--triangle {
+        bottom: 370px;
+    }
+    .about__img--success {
+        bottom: -75px;
+    }
+    
 }

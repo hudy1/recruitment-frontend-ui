@@ -75,6 +75,7 @@
 
     &.btn--stroke-gray {
         border-color: $gray;
+        background-color: $white;
     }
 
     & + .btn {
@@ -136,10 +137,20 @@
 
 @mixin triangle-bottom {
     bottom: 0;
-    @include triangle(0 0 $section-triangle-height 100vw, transparent transparent $white transparent)
+    @media (max-width: $screen-xs-max) {
+        @include triangle(0 0 $section-triangle-height-mobile 100vw, transparent transparent $white transparent)
+    }
+    @media (min-width: $screen-sm-min) {
+        @include triangle(0 0 $section-triangle-height 100vw, transparent transparent $white transparent)
+    }
 }
 
 @mixin triangle-top {
     top: 0;   
-    @include triangle($section-triangle-height 100vw 0 0, $white transparent transparent transparent);
+    @media (max-width: $screen-xs-max) {
+        @include triangle($section-triangle-height-mobile 100vw 0 0, $white transparent transparent transparent);
+    }
+    @media (min-width: $screen-sm-min) {
+        @include triangle($section-triangle-height 100vw 0 0, $white transparent transparent transparent);
+    }
 }

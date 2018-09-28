@@ -1,5 +1,5 @@
 .carousel {
-    padding: $section-triangle-height 0;
+    padding: $section-triangle-height-mobile 0;
     &::before {
         @include triangle-bottom;
     }
@@ -24,10 +24,11 @@
     white-space: normal;
     display: inline-block;
     vertical-align: bottom;
+    max-width: 60%;
     width: 335px;
-    margin-left: $gutter * 2;
-    margin-right: $gutter * 2;
-    padding: 35px 60px;
+    margin-left: $gutter;
+    margin-right: $gutter;
+    padding: 35px 40px;
     background-color: $white; 
     cursor: pointer; 
 
@@ -42,20 +43,20 @@
 
     &::after {
         color: $white;
-        width: 30px;
+        width: 20px;
         text-align: center;
-        font-size: 25px;
-        left: -13px;
-        top: 58px;
+        font-size: 20px;
+        left: -8px;
+        top: 38px;
     }
 
     &::before {
         @include fontelloContent('\e802');
-        font-size: 70px;
+        font-size: 40px;
         color: $accent-color5;
         transform: rotate(-7deg);
         top: 22px;
-        left: -35px;
+        left: -20px;
     }
 
     &.slider__slide--note {
@@ -97,5 +98,29 @@
 
     &.slider__indicator--active {
         background-color: $white;
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .slider__slide {
+        margin-left: $gutter * 2;
+        margin-right: $gutter * 2;
+        padding: 35px 60px;
+        max-width: 100%;
+
+        &::after {
+            width: 30px;
+            font-size: 25px;
+            left: -13px;
+            top: 58px;
+        }
+    
+        &::before {
+            font-size: 70px;
+            left: -35px;
+        }
+    }
+    .carousel {
+        padding: $section-triangle-height 0;
     }
 }

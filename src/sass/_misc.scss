@@ -15,7 +15,7 @@
     font-size: 100px;
     color: $green;
     transform: rotate(20deg);
-    left: 20%;
+    left: 2%;
     bottom: 340px;
 }
 
@@ -39,7 +39,7 @@
 .misc__bg--triangle-1 {
     color: $accent-color2;
     font-size: 80px;
-    right: 15%;
+    right: 5%;
     transform: rotate(42deg);
     bottom: 440px;
 }
@@ -51,4 +51,13 @@
     left: -40px;
     bottom: 120px;
     transform: rotate(-10deg);
+}
+
+@media (min-width: $screen-sm-min) {
+    .misc__bg--polygon-1 {
+        left: 20%;
+    }
+    .misc__bg--triangle-1 {
+        right: 15%;
+    } 
 }

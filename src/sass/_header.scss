@@ -1,18 +1,9 @@
+$header-padding-top: 60px;
+
 .header {
     color: $white;
     &::after {
         @include triangle-bottom;
-    }
-    &::before {
-        content: '';
-        width: 750px;
-        position: absolute;
-        top: 0;
-        right: -70px;
-        bottom: 0;
-        pointer-events: none;
-        display: block;
-        background: url('../img/header_bg.svg') right 20% no-repeat;
     }
 }
 
@@ -83,4 +74,20 @@
     width: 1px;
     background-color: $white;
     opacity: 0.2;
+}
+
+@media (min-width: $screen-lg-min) {
+    .header {
+        &::before {
+            content: '';
+            width: 750px;
+            position: absolute;
+            top: 0;
+            right: -70px;
+            bottom: 0;
+            pointer-events: none;
+            display: block;
+            background: url('../img/header_bg.svg') right 20% no-repeat;
+        }
+    }
 }
