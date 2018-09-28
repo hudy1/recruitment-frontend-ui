@@ -20,23 +20,63 @@
 }
 
 .slider__slide {
+    position: relative;
     white-space: normal;
-    border-radius: 5px;
     display: inline-block;
     vertical-align: bottom;
     width: 335px;
-    margin-left: $gutter;
-    margin-right: $gutter;
-    padding: 2 * $gutter;
+    margin-left: $gutter * 2;
+    margin-right: $gutter * 2;
+    padding: 35px 60px;
     background-color: $white; 
-    box-shadow: 0 15px 50px $shadow-color; 
+    cursor: pointer; 
 
     &:nth-child(even) {
         margin-bottom: 25px;
     }
 
-    &:hover {
-        cursor: pointer;
+    &::after,
+    &::before {
+        position: absolute;
+    }
+
+    &::after {
+        color: $white;
+        width: 30px;
+        text-align: center;
+        font-size: 25px;
+        left: -13px;
+        top: 58px;
+    }
+
+    &::before {
+        @include fontelloContent('\e802');
+        font-size: 70px;
+        color: $accent-color5;
+        transform: rotate(-7deg);
+        top: 22px;
+        left: -35px;
+    }
+
+    &.slider__slide--note {
+        &::after {
+            @include fontelloContent('\e801');
+        }
+    }
+    &.slider__slide--thunder {
+        &::after {
+            @include fontelloContent('\e805');
+        }
+    }
+    &.slider__slide--chart {
+        &::after {
+            @include fontelloContent('\e806');
+        }
+    }
+    &.slider__slide--settings {
+        &::after {
+            @include fontelloContent('\e804');
+        }
     }
 }
 

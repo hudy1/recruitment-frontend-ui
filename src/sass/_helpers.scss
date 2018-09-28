@@ -14,7 +14,7 @@
     font-size: calculateRem(36px);
     font-weight: 700;
     line-height: 1.5;
-    margin: 0;
+    margin: 0 0 0.75em 0;
     color: $text-base-color;
 
     &.headline--big {
@@ -31,6 +31,8 @@
 .btn {
     text-align: center;
     display: inline-block;
+    position: relative;
+    z-index: 1;
     vertical-align: top;
     min-width: 175px;
     padding: $gutter;
@@ -39,20 +41,40 @@
     font-weight: 700;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba($accent-color4, 0.3);
+    transition: all 0.3s;
 
     &.btn--white {
         background-color: $white;
         color: $accent-color3;
+
+        &:hover {
+            background-color: $focus;
+            color: $white;
+        }
     }
 
     &.btn--blue {
         background-image: linear-gradient(to bottom, $accent-color2, $accent-color4);
         color: $white;
+
+        &:hover {
+            background-image: linear-gradient(to bottom, $focus, darken($focus, 10%));
+        }
     }
 
-    &.btn--stroke {
+    &.btn--stroke,
+    &.btn--stroke-gray  {
         border: 1px solid;
         box-shadow: none;
+
+        &:hover {
+            border-color: $focus;
+            color: $focus;
+        }
+    }
+
+    &.btn--stroke-gray {
+        border-color: $gray;
     }
 
     & + .btn {
@@ -69,13 +91,34 @@
     }
 }
 
+.badge {
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: 0 15px 50px $shadow-color;
+}
+
 .intro {
     text-align: center;
     margin-bottom: 100px; 
+    position: relative;
+    z-index: 1;
 
     &.intro--white {
         color: $white;
     }
+}
+
+@mixin fontelloContent($a: '') {
+    content: $a;
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
 }
 
 @mixin triangle($border-width: 0, $border-color: transparent) {

@@ -1,17 +1,84 @@
-.about {
-    
-}
-
 .about__row {
     display: flex;
-    align-items: center;
-    margin-bottom: 170px;
+    justify-content: space-between;
+    max-width: 1000px;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    margin: 20px auto 120px;
+
+    & + .about__row {
+        margin-top: 350px;
+    } 
+
+    &.about__row--center {
+        align-items: center;
+    }
+
+    &.about__row--top {
+        align-items: flex-start;
+    }
 }
 
 .about__col {
     flex: 1;
+    max-width: 375px;
+    position: relative;
+}
 
-    &.about__col--txt {
-        padding: 0 80px;
-    }
+.about__img {
+    position: absolute;
+}
+
+.about__img--error,
+.about__img--selectors {
+    width: 240px;
+    right: -80px;
+}
+
+.about__img--error {
+    top: 100px;
+}
+
+.about__img--selectors {
+    top: 190px;
+}
+
+.about__img--ranges {
+    top: -105px;
+    left: -100px;
+}
+
+.about__img--success {
+    right: -30px;
+    bottom: -75px;
+}
+
+.about__img--triangle,
+.about__img--polygon-blue,
+.about__img--polygon-green {
+    font-size: 80px;
+    line-height: 1;
+}
+
+.about__img--polygon-blue {
+    color: $accent-color5;
+    left: -35px;
+    bottom: -50px;
+    transform: rotate(-10deg);
+}
+
+.about__img--polygon-green {
+    color: $green;
+    left: -50px;
+    bottom: -50px;
+    transform: rotate(10deg);
+}
+
+.about__img--triangle {
+    color: $accent-color2;
+    font-size: 60px;
+    left: 50%;
+    top: -145px;
+    margin-left: -30px;
+    transform: rotate(-45deg)
 }

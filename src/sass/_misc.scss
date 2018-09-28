@@ -1,4 +1,54 @@
 .misc {
     text-align: center;
+    padding-top: 100px;
     padding-bottom: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.misc__bg {
+    position: absolute;
+    line-height: 1;
+}
+
+.misc__bg--polygon-1 {
+    font-size: 100px;
+    color: $green;
+    transform: rotate(20deg);
+    left: 20%;
+    bottom: 340px;
+}
+
+.misc__bg--polygon-2 {
+    color: $accent-color5;
+    transform: rotate(45deg);
+    right: 25%;
+    bottom: 200px;
+    font-size: 70px;
+}
+
+.misc__bg--polygon-3 {
+    opacity: 0.2;
+    color: $green;
+    font-size: 170px;
+    transform: rotate(-10deg);
+    right: -30px;
+    bottom: 100px;
+}
+
+.misc__bg--triangle-1 {
+    color: $accent-color2;
+    font-size: 80px;
+    right: 15%;
+    transform: rotate(42deg);
+    bottom: 440px;
+}
+
+.misc__bg--triangle-2 {
+    color: $accent-color5;
+    opacity: 0.1;
+    font-size: 170px;
+    left: -40px;
+    bottom: 120px;
+    transform: rotate(-10deg);
 }

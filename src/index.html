@@ -6,19 +6,20 @@
     <title>Recruitment task</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
         <!-- header -->
         <header class="header box box--gradient">
-            <div class="container header_content">
+            <div class="container header__content">
                 <nav class="header__nav">
                     <h1 class="header__logo">CloudingCalc</h1>
-                    <div>
-                        <button role="search" class="header__search">
-                            <img src="img/icon-search.svg" alt="search" />
+                    <div class="header__links">
+                        <button role="search" class="header__search icon-search">
                         </button>
+                        <span class="header__divider"></span>
                         <a href="#" class="header__link">Log in</a>
                         <a href="#" class="header__link">Sign Up</a>
                     </div>
@@ -34,7 +35,7 @@
         <!-- /header -->
         <!-- about -->
         <section class="about box">
-            <div class="about__row container">
+            <div class="about__row about__row--center">
                 <div class="about__col about__col--txt">
                     <h3 class="headline">Aperiam ducimus, repellendus</h3>
                     <p>
@@ -42,13 +43,20 @@
                         omnis numquam nesciunt adipisci vero at, dolore, voluptatem voluptatibus atque recusandae nam quidem.
                     </p>
                 </div>
-                <div class="about__col about__col--img">
-                    sth
+                <div class="about__col about__col--img" role="presentation">
+                    <img src="img/comp-editor-1.svg" alt="" />
+                    <img src="img/error.png" alt="" class="badge about__img about__img--error" />
+                    <img src="img/selectors.png" alt="" class="badge about__img about__img--selectors" />
+                    <span class="icon-polygon about__img about__img--polygon-blue"></span>
                 </div>
             </div>
-            <div class="about__row container">
-                <div class="about__col about__col--img">
-                    sth
+            <div class="about__row about__row--top">
+                <div class="about__col about__col--img" role="presentation">
+                    <img src="img/comp-editor-2.svg" alt="" />
+                    <img src="img/ranges.png" alt="" class="badge about__img about__img--ranges" />
+                    <img src="img/success.png" alt="" class="badge about__img about__img--success" />
+                    <span class="icon-polygon about__img about__img--polygon-green"></span>
+                    <span class="icon-triangle about__img about__img--triangle"></span>
                 </div>
                 <div class="about__col about__col--txt">
                     <h3 class="headline">Optio quidem iusto</h3>
@@ -67,32 +75,32 @@
             </header>
             <div class="slider">
                 <ul class="slider__list">
-                    <li class="slider__slide">
+                    <li class="slider__slide badge slider__slide--note">
                         <h4 class="headline headline--small">Accusantium debitis 1</h4>
                         <p>Accusantium debitis quia earum, vero, reprehenderit, id facilis obcaecati minima aliquid omnis, tenetur
                             accusamus ab. Id vel ea et vitae magnam cupiditate</p>
                     </li>
-                    <li class="slider__slide">
+                    <li class="slider__slide badge slider__slide--chart">
                         <h4 class="headline headline--small">Accusantium debitis 2</h4>
                         <p>Accusantium debitis quia earum, vero, reprehenderit, id facilis obcaecati minima aliquid omnis, tenetur
                             accusamus ab. Id vel ea et vitae magnam cupiditate</p>
                     </li>
-                    <li class="slider__slide slider__slide--active">
+                    <li class="slider__slide badge slider__slide--active slider__slide--settings">
                         <h4 class="headline headline--small">Accusantium debitis 3</h4>
                         <p>Accusantium debitis quia earum, vero, reprehenderit, id facilis obcaecati minima aliquid omnis, tenetur
                             accusamus ab. Id vel ea et vitae magnam cupiditate</p>
                     </li>
-                    <li class="slider__slide">
+                    <li class="slider__slide badge slider__slide--chart">
                         <h4 class="headline headline--small">Accusantium debitis 4</h4>
                         <p>Accusantium debitis quia earum, vero, reprehenderit, id facilis obcaecati minima aliquid omnis, tenetur
                             accusamus ab. Id vel ea et vitae magnam cupiditate</p>
                     </li>
-                    <li class="slider__slide">
+                    <li class="slider__slide badge slider__slide--thunder">
                         <h4 class="headline headline--small">Accusantium debitis 5</h4>
                         <p>Accusantium debitis quia earum, vero, reprehenderit, id facilis obcaecati minima aliquid omnis, tenetur
                             accusamus ab. Id vel ea et vitae magnam cupiditate</p>
                     </li>
-                    <li class="slider__slide">
+                    <li class="slider__slide badge slider__slide--note">
                         <h4 class="headline headline--small">Accusantium debitis 6</h4>
                         <p>Accusantium debitis quia earum, vero, reprehenderit, id facilis obcaecati minima aliquid omnis, tenetur
                             accusamus ab. Id vel ea et vitae magnam cupiditate</p>
@@ -115,12 +123,14 @@
                 </header>
                 <div class="prices">
                     <div class="prices__box">
-                        <div class="prices__card">
+                        <div class="prices__card badge">
                             <div class="prices__price">
-                                <h4 class="headline">CPU+</h4>
-                                <sup>$</sup>
-                                <b>0.99</b>
-                                <br />&#47;CPU per hour
+                                <h4 class="headline headline--small prices__headline">CPU</h4>
+                                <div class="prices__info">
+                                    <div class="prices__value prices__value--1">
+                                        <sup class="prices__index">$</sup>0.09</div>
+                                    &#47; CPU per hour
+                                </div>
                             </div>
                             <ul class="checkmark-list">
                                 <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
@@ -130,12 +140,14 @@
                         </div>
                     </div>
                     <div class="prices__box">
-                        <div class="prices__card">
+                        <div class="prices__card badge">
                             <div class="prices__price">
-                                <h4 class="headline">CPU+</h4>
-                                <sup>$</sup>
-                                <b>0.99</b>
-                                <br />&#47;CPU per hour
+                                <h4 class="headline headline--small prices__headline">CPU+</h4>
+                                <div class="prices__info">
+                                    <div class="prices__value prices__value--2">
+                                        <sup class="prices__index">$</sup>0.99</div>
+                                    &#47; CPU per hour
+                                </div>
                             </div>
                             <ul class="checkmark-list">
                                 <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
@@ -145,12 +157,14 @@
                         </div>
                     </div>
                     <div class="prices__box">
-                        <div class="prices__card">
+                        <div class="prices__card badge">
                             <div class="prices__price">
-                                <h4 class="headline">CPU+</h4>
-                                <sup>$</sup>
-                                <b>0.99</b>
-                                <br />&#47;CPU per hour
+                                <h4 class="headline headline--small prices__headline">CPU++</h4>
+                                <div class="prices__info">
+                                    <div class="prices__value prices__value--3">
+                                        <sup class="prices__index">$</sup>1.99</div>
+                                    &#47; CPU per hour
+                                </div>
                             </div>
                             <ul class="checkmark-list">
                                 <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
@@ -159,44 +173,52 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="prices__box">
-                        <div class="prices__card">
+                    <div class="prices__box prices__box--special">
+                        <div class="prices__card badge">
                             <div class="prices__price">
-                                <h4 class="headline">CPU+</h4>
-                                <sup>$</sup>
-                                <b>0.99</b>
-                                <br />&#47;CPU per hour
+                                <h4 class="headline headline--small prices__headline">On premise</h4>
+                                <div class="prices__info prices__info--contact">
+                                    Contact us
+                                </div>
                             </div>
                             <ul class="checkmark-list">
-                                <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
-                                <li class="checkmark-list__li">Dolores dicta architecto sunt</li>
+                                <li class="checkmark-list__li">Dolores dicta architecto</li>
                                 <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <h4 class="headline">Rerum corrupti dolorum possimus corporis:</h4>
-                <ul class="checkmark-list checkmark-list--col-3">
-                    <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
-                    <li class="checkmark-list__li">Dolores dicta architecto sunt</li>
-                    <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
-                    <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
-                    <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
-                    <li class="checkmark-list__li">Dolores dicta architecto sunt</li>
-                </ul>
+                <div class="prices__other">
+                    <h4 class="headline headline--small prices__header-other">Rerum corrupti dolorum possimus corporis:</h4>
+                    <ul class="checkmark-list checkmark-list--col-3">
+                        <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
+                        <li class="checkmark-list__li">Dolores dicta architecto sunt</li>
+                        <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
+                        <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
+                        <li class="checkmark-list__li">Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
+                        <li class="checkmark-list__li">Dolores dicta architecto sunt Dolores dicta architecto sunt possimus corporis beatae aspernatur</li>
+                    </ul>
+                </div>
             </div>
         </section>
         <!-- /pricing -->
         <!-- misc -->
         <section class="misc">
-            <header class="intro">
-                <h3 class="headline">Reprehenderit, dolorem?</h3>
-                <p>Doloribus vel, molestias, suscipit!</p>
-            </header>
-            <a href="#" class="btn btn--blue">Start for free</a>
-            <a href="#" class="btn btn--stroke">Read the docs</a>
+            <div class="container">
+                <header class="intro">
+                    <h3 class="headline">Reprehenderit, dolorem?</h3>
+                    <p>Doloribus vel, molestias, suscipit!</p>
+                </header>
+                <a href="#" class="btn btn--blue">Start for free</a>
+                <a href="#" class="btn btn--stroke-gray">Read the docs</a>
+            </div>
+            <span class="icon-polygon misc__bg misc__bg--polygon-1"></span>
+            <span class="icon-polygon misc__bg misc__bg--polygon-2"></span>
+            <span class="icon-polygon misc__bg misc__bg--polygon-3"></span>
+            <span class="icon-triangle misc__bg misc__bg--triangle-1"></span>
+            <span class="icon-triangle misc__bg misc__bg--triangle-2"></span>
         </section>
-        <!-- misc -->
+        <!-- /misc -->
     </div>
     <script src="js/bundle.min.js"></script>
     <script>document.addEventListener('DOMContentLoaded', entryPoint.default);</script>

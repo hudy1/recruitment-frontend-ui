@@ -1,11 +1,11 @@
 
 $card-hover-duration: $animation-duration / 3;
-$card-x-padding: 40px;
-$card-y-padding: 35px;
+$card-x-padding: 35px;
+$card-y-padding: 40px;
 
 .pricing {
     background-image: linear-gradient(to bottom, $white, #f4f7fe);
-    padding-bottom: $section-triangle-height;
+    padding-bottom: $section-triangle-height + 70px;
     
     &::after {
         @include triangle-bottom;
@@ -14,14 +14,47 @@ $card-y-padding: 35px;
 
 .prices {
     display: flex;
-    margin-bottom: 130px;
+    margin-bottom: 150px;
+    position: relative;
+
+    &::before,
+    &::after {
+        position: absolute;
+        z-index: 0;
+        line-height: 1;
+    }
+
+    &::before {
+        @include fontelloContent('\e802');
+        font-size: 70px;
+        color: $accent-color5;
+        left: -35px;
+        top: -30px;
+        transform: rotate(90deg);
+    }
+
+    &::after {
+        @include fontelloContent('\e807');
+        font-size: 80px;
+        color: $accent-color2;
+        opacity: 0.2;
+        right: -62px;
+        bottom: -25px;
+        transform: rotate(-8deg);
+    }
 }
 
 .prices__box {
-    flex-grow: 1;
+    flex: 1;
+    min-width: 25%;
+    z-index: 1;
+
+    &.prices__box--special {
+        padding-left: $gutter * 2;
+    }
 
     &:hover {
-        z-index: 1;
+        z-index: 2;
         .prices__card {
             transform: scale(1.1);
         }
@@ -31,23 +64,69 @@ $card-y-padding: 35px;
 .prices__price {
     text-align: center;
     margin: 0 (-$card-x-padding) $card-y-padding (-$card-x-padding);
-    padding-bottom: $card-y-padding;
     border-bottom: 1px solid #f4f4f4;
+    height: 190px;
+    font-size: calculateRem(14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .prices__card {
+    position: relative;
     padding: $card-y-padding $card-x-padding;
-    border-radius: 5px;
-    background-color: $white;
-    box-shadow: 0 15px 50px $shadow-color;
     transition: transform $card-hover-duration;
+    height: 100%;
     cursor: pointer;
+}
+.prices__value {
+    font-size: calculateRem(60px);
+    line-height: 1.1em;
+
+    &.prices__value--1 {
+        color: $accent-color1;
+    }
+    &.prices__value--2 {
+        color: $accent-color2;
+    }
+    &.prices__value--3 {
+        color: $accent-color3;
+    }
+    &.prices__value--4 {
+        color: $accent-color4;
+    }
+}
+
+.prices__headline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: $card-y-padding;
+}
+
+.prices__header-other {
+    margin-bottom: 60px;
+}
+
+.prices__index {
+    font-size: 0.25em;
+    color: $plain-text-color;
+    vertical-align: 2.5em;
+    
+}
+
+.prices__info {
+    transform: translateY(10px);
+    &.prices__info--contact {
+        color: $accent-color4;
+        font-size: calculateRem(30px);
+    }
 }
 
 .checkmark-list {
     &.checkmark-list--col-3 {
         column-count: 3;
-        column-gap: $gutter;
+        column-gap: 50px;
     }
 }
 
@@ -60,14 +139,15 @@ $card-y-padding: 35px;
     }
 
     &::before {
-        content: '';
-        background: url(../img/icon-check-mark.svg) left top / 19px 19px no-repeat;
+        @include fontelloContent('\e800');
+        background-image: linear-gradient(to right, $accent-color3, $accent-color2);
+        background-clip: text;
+        color: transparent;
         z-index: 0;
-        width: 21px;
-        height: 21px;
-        display: block;
         position: absolute;
+        font-size: 20px;
+        width: 21px;
         left: 0;
-        top: 0;
+        top: -2px;
     }
 }
