@@ -56,10 +56,11 @@ $header-padding-top: 60px;
 }
 
 .header__link {
-    margin-left: 25px;
+    margin-left: $gutter;
 }
 
 .header__search {
+    padding: 0;
     color: $white;
     &:hover {
         cursor: pointer;
@@ -74,6 +75,13 @@ $header-padding-top: 60px;
     width: 1px;
     background-color: $white;
     opacity: 0.2;
+}
+
+@media (min-width: $screen-sm-min) {
+    .header__link,
+    .header__divider {
+        margin-left: 25px;
+    } 
 }
 
 @media (min-width: $screen-lg-min) {

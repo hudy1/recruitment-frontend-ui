@@ -30,18 +30,21 @@
 
 .btn {
     text-align: center;
-    display: inline-block;
+    display: block;
+    width: 175px;
+    height: 50px;
+    line-height: 50px;
     position: relative;
     z-index: 1;
-    vertical-align: top;
-    min-width: 175px;
-    padding: $gutter;
+    padding: 0 $gutter;
     font-size: calculateRem(14px);
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba($accent-color4, 0.3);
     transition: all 0.3s;
+    margin-left: auto;
+    margin-right: auto;
 
     &.btn--white {
         background-color: $white;
@@ -79,7 +82,7 @@
     }
 
     & + .btn {
-        margin-left: $gutter;
+        margin-top: 10px;
     }
 }
 
@@ -152,5 +155,17 @@
     }
     @media (min-width: $screen-sm-min) {
         @include triangle($section-triangle-height 100vw 0 0, $white transparent transparent transparent);
+    }
+}
+
+@media (min-width: $screen-sm-min) {
+    .btn {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        & + .btn {
+            margin-top: 0;
+            margin-left: $gutter;
+        }
     }
 }
