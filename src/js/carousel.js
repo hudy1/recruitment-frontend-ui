@@ -1,3 +1,5 @@
+import debounce from './debounce';
+
 export default function carousel() {
     const slider = document.querySelector('.slider__list');
     const slides = slider.querySelectorAll('.slider__slide');
@@ -6,7 +8,9 @@ export default function carousel() {
     let prevActiveSlide = slider.querySelector('.slider__slide--active');
     let prevActiveIndicator = null;
 
-    slides.forEach((d, i) => d.dataset.nth = i); // set each slide number for correct indicator update
+    slides.forEach((d, i) => {
+        d.dataset.nth = i;
+    }); // set each slide number for correct indicator update
 
     const updateIndicators = (slide) => {
         const nth = slide.dataset.nth;
@@ -44,6 +48,16 @@ export default function carousel() {
         }
     });
 
-    positionSlider(prevActiveSlide); // center initial slide
-    updateIndicators(prevActiveSlide); // set initial active indicator
+    const init = () => {
+        positionSlider(prevActiveSlide); // center initial slide
+        updateIndicators(prevActiveSlide); // set initial active indicator
+    }
+
+    const debounced = debounce(init)
+
+    window.addEventListener('resize', function() {
+        debounced();
+    });
+
+    init();
 }

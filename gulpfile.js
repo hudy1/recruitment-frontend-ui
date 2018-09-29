@@ -11,6 +11,7 @@ var browserSync = require('browser-sync').create();
 var htmlmin = require('gulp-htmlmin');
 var plumber = require('gulp-plumber');
 var wait = require('gulp-wait');
+var imagemin = require('gulp-imagemin');
 
 gulp.task('webpack', () => {
 	gulp.src('./src/js/index.js')
@@ -47,9 +48,10 @@ gulp.task('minify-css', ['sass'], function () {
 		.pipe(gulp.dest('dist/css/'));
 });
 
+
 gulp.task('copy-assets', function() {
 	var fonts = gulp.src('src/fonts/**').pipe(gulp.dest('dist/fonts'));
-	var images = gulp.src('src/images/**').pipe(gulp.dest('dist/img'));
+	var images = gulp.src('src/img/**').pipe(imagemin()).pipe(gulp.dest('dist/img')); // compress & copy
 
 	return [fonts, images];
 });
